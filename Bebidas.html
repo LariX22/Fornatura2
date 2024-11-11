@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento de Bebidas</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Fotos/Avatares.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+
+        table {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #555;
+        }
+
+        th {
+            background-color: #004080;
+            color: #fff;
+        }
+
+        .summary {
+            background-color: #2d2d2d;
+            font-weight: bold;
+        }
+
+        .total {
+            font-size: 1.5em;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .btn-toggle {
+            font-size: 1.2em;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .btn-toggle:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Orçamento de Bebidas</h1>
+    
+    <h2>Detalhamento do Orçamento de Bebidas</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Quantidade</th>
+            <th>Custo Unitário (R$)</th>
+            <th>Total (R$)</th>
+        </tr>
+        <tr>
+            <td>Guaraná Antárctica 1L</td>
+            <td>Unidade</td>
+            <td>4,49</td>
+            <td id="guarana">4,49</td>
+        </tr>
+        <tr>
+            <td>Coca Cola 1,5L</td>
+            <td>Unidade</td>
+            <td>10,07</td>
+            <td id="coca">10,07</td>
+        </tr>
+        <tr>
+            <td>Fanta Laranja 1L</td>
+            <td>Unidade</td>
+            <td>4,79</td>
+            <td id="fanta">4,79</td>
+        </tr>
+        <tr>
+            <td>Sprite 1L</td>
+            <td>Unidade</td>
+            <td>4,99</td>
+            <td id="sprite">4,99</td>
+        </tr>
+        <tr>
+            <td>Pepsi 1L</td>
+            <td>Unidade</td>
+            <td>4,59</td>
+            <td id="pepsi">4,59</td>
+        </tr>
+        <tr>
+            <td>Suco de uva Turma da Monica 1L</td>
+            <td>Unidade</td>
+            <td>3,89</td>
+            <td id="sucoUva">3,89</td>
+        </tr>
+        <tr>
+            <td>Suco de Laranja da Fruta</td>
+            <td>Unidade</td>
+            <td>2,49</td>
+            <td id="sucoLaranja">2,49</td>
+        </tr>
+        <tr>
+            <td>Suco de Maçã Maguary</td>
+            <td>Unidade</td>
+            <td>2,59</td>
+            <td id="sucoMaca">2,59</td>
+        </tr>
+        <tr>
+            <td>Suco de Goiaba Tial 100% sem açúcar</td>
+            <td>Unidade</td>
+            <td>10,99</td>
+            <td id="sucoGoiaba">10,99</td>
+        </tr>
+        <tr>
+            <td>Suco de Caju Bela Ischia</td>
+            <td>Unidade</td>
+            <td>170,09</td>
+            <td id="sucoCaju">170,09</td>
+        </tr>
+        <tr>
+            <td>Água Tônica Saint Pierre Pink</td>
+            <td>Unidade</td>
+            <td>29,90</td>
+            <td id="aguaTonica">29,90</td>
+        </tr>
+        <tr>
+            <td>Gin sem álcool San Marco 700mL</td>
+            <td>Unidade</td>
+            <td>73,90</td>
+            <td id="gin">73,90</td>
+        </tr>
+        <tr>
+            <td>Cerveja sem álcool Bora Bora Pilsen</td>
+            <td>Unidade</td>
+            <td>21,90</td>
+            <td id="cerveja">21,90</td>
+        </tr>
+        <tr>
+            <td>Água Saborizada de Lichia 350mL</td>
+            <td>Unidade</td>
+            <td>5,31</td>
+            <td id="aguaLichia">5,31</td>
+        </tr>
+        <tr>
+            <td>Pink Lemonade Saint Pierre</td>
+            <td>Unidade</td>
+            <td>67,90</td>
+            <td id="pinkLemonade">67,90</td>
+        </tr>
+        <tr class="summary">
+            <td colspan="3">Subtotal Bebidas</td>
+            <td id="subtotal">417,98</td>
+        </tr>
+    </table>
+
+    <div class="total">
+        <h2>Total Bebidas: R$ <span id="totalBebidas">417,98</span></h2>
+    </div>
+
+    <button class="btn-toggle" onclick="salvarOrcamento()">Salvar Orçamento de Bebidas</button>
+    <button class="btn-toggle" onclick="window.location.href='Orçamentogeral.html'">Voltar para a Página De Orçamento</button>
+
+    <script>
+        function calcularTotal() {
+            const guarana = parseFloat(document.getElementById('guarana').innerText);
+            const coca = parseFloat(document.getElementById('coca').innerText);
+            const fanta = parseFloat(document.getElementById('fanta').innerText);
+            const sprite = parseFloat(document.getElementById('sprite').innerText);
+            const pepsi = parseFloat(document.getElementById('pepsi').innerText);
+            const sucoUva = parseFloat(document.getElementById('sucoUva').innerText);
+            const sucoLaranja = parseFloat(document.getElementById('sucoLaranja').innerText);
+            const sucoMaca = parseFloat(document.getElementById('sucoMaca').innerText);
+            const sucoGoiaba = parseFloat(document.getElementById('sucoGoiaba').innerText);
+            const sucoCaju = parseFloat(document.getElementById('sucoCaju').innerText);
+            const aguaTonica = parseFloat(document.getElementById('aguaTonica').innerText);
+            const gin = parseFloat(document.getElementById('gin').innerText);
+            const cerveja = parseFloat(document.getElementById('cerveja').innerText);
+            const aguaLichia = parseFloat(document.getElementById('aguaLichia').innerText);
+            const pinkLemonade = parseFloat(document.getElementById('pinkLemonade').innerText);
+            
+            const total = guarana + coca + fanta + sprite + pepsi + sucoUva + sucoLaranja + sucoMaca + sucoGoiaba + sucoCaju + aguaTonica + gin + cerveja + aguaLichia + pinkLemonade;
+            
+            document.getElementById('subtotal').innerText = total.toFixed(2);
+            document.getElementById('totalBebidas').innerText = total.toFixed(2);
+        }
+
+        function salvarOrcamento() {
+            const totalBebidas = document.getElementById('totalBebidas').innerText;
+            localStorage.setItem('bebidasTotal', totalBebidas);
+            alert('Orçamento de bebidas salvo com sucesso!');
+        }
+
+        // Calcular total ao carregar a página
+        calcularTotal();
+    </script>
+</body>
+</html>

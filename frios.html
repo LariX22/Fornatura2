@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento Completo de Frios</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Fotos/Avatares.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+
+        table {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #555;
+        }
+
+        th {
+            background-color: #004080;
+            color: #fff;
+        }
+
+        .summary {
+            background-color: #2d2d2d;
+            font-weight: bold;
+        }
+
+        .total {
+            font-size: 1.5em;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .btn-toggle {
+            font-size: 1.2em;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .btn-toggle:hover {
+            background-color: #45a049;
+        }
+
+        .btn-save, .btn-load {
+            font-size: 1.2em;
+            padding: 15px;
+            background-color: #008CBA;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .btn-save:hover, .btn-load:hover {
+            background-color: #005f73;
+        }
+
+        .table-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Orçamento Completo de Frios</h1>
+
+    <!-- Frios Opção 1 -->
+    <button class="btn-toggle" onclick="toggleSection('frios1Container')">Frios Opção 1</button>
+    <div id="frios1Container" class="table-container">
+        <h2>Frios Opção 1</h2>
+        <table>
+    <tr>
+        <th>Item</th>
+        <th>Quantidade</th>
+        <th>Custo Unitário (R$)</th>
+        <th>Total (R$)</th>
+    
+    <tr>
+        <td>Queijos Variados</td>
+        <td>3 kg</td>
+        <td>80,00</td>
+        <td>240,00</td>
+    </tr>
+    <tr>
+        <td>Mini quiche de alho poró</td>
+        <td>50 unid.</td>
+        <td>2,00</td>
+        <td>100,00</td>
+    </tr>
+    <tr>
+        <td>Folhado com ricota</td>
+        <td>50 unid.</td>
+        <td>2,00</td>
+        <td>100,00</td>
+    </tr>
+    <tr class="summary">
+        <td colspan="3">Subtotal Frios</td>
+        <td>440,00</td>
+    </tr>
+</table>
+</div>
+
+<div class="total">
+<h2>Total Frios: R$ 440,00</h2>
+</div>
+
+<!-- Botões de Salvamento e Carregamento -->
+<button class="btn-save" onclick="saveBudget()">Salvar Orçamento</button>
+
+<button class="btn-toggle" onclick="window.location.href='Orçamentogeral.html'">Voltar para a Página de Orçamento</button>
+
+<script>
+// Função para alternar a visibilidade das tabelas
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+}
+
+// Função para salvar o orçamento no localStorage
+function saveBudget() {
+    const totalFrios = 440.00; // Valor total dos frios
+    localStorage.setItem('friosTotal', totalFrios);
+    alert('Orçamento de Frios salvo com sucesso!');
+}
+</script>
+</body>
+</html>

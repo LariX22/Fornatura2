@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento Completo de Evento</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Fotos/Avatares.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+
+        table {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #555;
+        }
+
+        th {
+            background-color: #004080;
+            color: #fff;
+        }
+
+        .summary {
+            background-color: #2d2d2d;
+            font-weight: bold;
+        }
+
+        .total {
+            font-size: 1.5em;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .btn-toggle {
+            font-size: 1.2em;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .btn-toggle:hover {
+            background-color: #45a049;
+        }
+
+        .table-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Orçamento Completo de Evento</h1>
+
+    <!-- Churrasco Opção 1 -->
+    <button class="btn-toggle" onclick="toggleSection('churrasco1Container')">Churrasco Opção 1</button>
+    <div id="churrasco1Container" class="table-container">
+        <h2>Churrasco Opção 1</h2>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Quantidade</th>
+                <th>Custo Unitário (R$)</th>
+                <th>Total (R$)</th>
+            </tr>
+            <tr>
+                <td>Picanha</td>
+                <td>13 kg</td>
+                <td>89,90</td>
+                <td id="picanha1">1168,70</td>
+            </tr>
+            <tr>
+                <td>Picanha Suína</td>
+                <td>13 kg</td>
+                <td>38,90</td>
+                <td id="picanhaSuina1">505,70</td>
+            </tr>
+            <tr>
+                <td>Fraldinha</td>
+                <td>13 kg</td>
+                <td>32,90</td>
+                <td id="fraldinha1">427,70</td>
+            </tr>
+            <tr>
+                <td>Alcatra</td>
+                <td>13 kg</td>
+                <td>35,90</td>
+                <td id="alcatra1">466,70</td>
+            </tr>
+            <tr>
+                <td>Linguiça Toscana</td>
+                <td>13 kg</td>
+                <td>22,90</td>
+                <td id="linguica1">298,70</td>
+            </tr>
+            <tr>
+                <td>Asa de Frango</td>
+                <td>13 kg</td>
+                <td>17,90</td>
+                <td id="asaFrango1">232,70</td>
+            </tr>
+            <tr class="summary">
+                <td colspan="3">Subtotal Churrasco Opção 1</td>
+                <td id="subtotalChurrasco1">2569,80</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Churrasco Opção 2 -->
+    <button class="btn-toggle" onclick="toggleSection('churrasco2Container')">Churrasco Opção 2</button>
+    <div id="churrasco2Container" class="table-container">
+        <h2>Churrasco Opção 2</h2>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Quantidade</th>
+                <th>Custo Unitário (R$)</th>
+                <th>Total (R$)</th>
+            </tr>
+            <tr>
+                <td>Picanha</td>
+                <td>13 kg</td>
+                <td>89,90</td>
+                <td id="picanha2">1168,70</td>
+            </tr>
+            <tr>
+                <td>Picanha Suína</td>
+                <td>13 kg</td>
+                <td>38,90</td>
+                <td id="picanhaSuina2">505,70</td>
+            </tr>
+            <tr>
+                <td>Fraldinha</td>
+                <td>13 kg</td>
+                <td>32,90</td>
+                <td id="fraldinha2">427,70</td>
+            </tr>
+            <tr>
+                <td>Alcatra</td>
+                <td>13 kg</td>
+                <td>35,90</td>
+                <td id="alcatra2">466,70</td>
+            </tr>
+            <tr>
+                <td>Linguiça Toscana</td>
+                <td>13 kg</td>
+                <td>22,90</td>
+                <td id="linguica2">298,70</td>
+            </tr>
+            <tr>
+                <td>Asa de Frango</td>
+                <td>13 kg</td>
+                <td>17,90</td>
+                <td id="asaFrango2">232,70</td>
+            </tr>
+            <tr class="summary">
+                <td colspan="3">Subtotal Churrasco Opção 2</td>
+                <td id="subtotalChurrasco2">2569,80</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Acompanhamentos -->
+    <button class="btn-toggle" onclick="toggleSection('acompanhamentosContainer')">Acompanhamentos</button>
+    <div id="acompanhamentosContainer" class="table-container">
+        <h2>Acompanhamentos</h2>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Custo Unitário (R$)</th>
+                <th>Total (R$)</th>
+            </tr>
+            <tr>
+                <td>Chimichurri</td>
+                <td>Porção para 10 pessoas</td>
+                <td>10</td>
+                <td>33,90</td>
+                <td id="chimichurri">101,70</td>
+            </tr>
+            <tr>
+                <td>Salada Tropical</td>
+                <td>Com nozes e uvas-passas</td>
+                <td>10</td>
+                <td>35,90</td>
+                <td id="saladaTropical">107,70</td>
+            </tr>
+            <tr>
+                <td>Vinagrete</td>
+                <td>Porção para 10 pessoas</td>
+                <td>10</td>
+                <td>21,70</td>
+                <td id="vinagrete">65,10</td>
+            </tr>
+            <tr class="summary">
+                <td colspan="4">Subtotal Acompanhamentos</td>
+                <td id="subtotalAcompanhamentos">2651,90</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="total">
+        <h2>Total Geral do Orçamento:</h2>
+        <p><strong>Total do Churrasco: R$ <span id="totalChurrasco">5220,60</span></strong></p>
+        <p><strong>Total dos Acompanhamentos: R$ <span id="totalAcompanhamentos">274.50</span></strong></p>
+        <p><strong>Total Geral: R$ <span id="totalGeral">5495,10</span></strong></p>
+    </div>
+
+    <button class="btn-toggle" onclick="salvarOrcamento()">Salvar Orçamento</button>
+    <button class="btn-toggle" onclick="window.location.href='Orçamentogeral.html'">Voltar para a Página de Orçamento</button>
+
+    <script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function calcularTotal() {
+            const picanha1 = parseFloat(document.getElementById('picanha1').innerText);
+            const picanhaSuina1 = parseFloat(document.getElementById('picanhaSuina1').innerText);
+            const fraldinha1 = parseFloat(document.getElementById('fraldinha1').innerText);
+            const alcatra1 = parseFloat(document.getElementById('alcatra1').innerText);
+            const linguica1 = parseFloat(document.getElementById('linguica1').innerText);
+            const asaFrango1 = parseFloat(document.getElementById('asaFrango1').innerText);
+            const subtotalChurrasco1 = picanha1 + picanhaSuina1 + fraldinha1 + alcatra1 + linguica1 + asaFrango1;
+
+            const picanha2 = parseFloat(document.getElementById('picanha2').innerText);
+            const picanhaSuina2 = parseFloat(document.getElementById('picanhaSuina2').innerText);
+            const fraldinha2 = parseFloat(document.getElementById('fraldinha2').innerText);
+            const alcatra2 = parseFloat(document.getElementById('alcatra2').innerText);
+            const linguica2 = parseFloat(document.getElementById('linguica2').innerText);
+            const asaFrango2 = parseFloat(document.getElementById('asaFrango2').innerText);
+            const subtotalChurrasco2 = picanha2 + picanhaSuina2 + fraldinha2 + alcatra2 + linguica2 + asaFrango2;
+
+            const chimichurri = parseFloat(document.getElementById('chimichurri').innerText);
+            const saladaTropical = parseFloat(document.getElementById('saladaTropical').innerText);
+            const vinagrete = parseFloat(document.getElementById('vinagrete').innerText);
+            const subtotalAcompanhamentos = chimichurri + saladaTropical + vinagrete;
+
+            // Atualizando os subtotais na tabela
+            document.getElementById('subtotalChurrasco1').innerText = subtotalChurrasco1.toFixed(2);
+            document.getElementById('subtotalChurrasco2').innerText = subtotalChurrasco2.toFixed(2);
+            document.getElementById('subtotalAcompanhamentos').innerText = subtotalAcompanhamentos.toFixed(2);
+
+            // Calculando o total geral
+            const totalChurrasco = subtotalChurrasco1 + subtotalChurrasco2;
+            const totalAcompanhamentos = subtotalAcompanhamentos;
+            const totalGeral = totalChurrasco + totalAcompanhamentos;
+
+            document.getElementById('totalChurrasco').innerText = totalChurrasco.toFixed(2);
+            document.getElementById('totalAcompanhamentos').innerText = totalAcompanhamentos.toFixed(2);
+            document.getElementById('totalGeral').innerText = totalGeral.toFixed(2);
+        }
+
+        function salvarOrcamento() {
+            const totalChurrasco = document.getElementById('totalChurrasco').innerText;
+            const totalAcompanhamentos = document.getElementById('totalAcompanhamentos').innerText;
+            const totalGeral = document.getElementById('totalGeral').innerText;
+
+            const orcamento = {
+                totalChurrasco: totalChurrasco,
+                totalAcompanhamentos: totalAcompanhamentos,
+                totalGeral: totalGeral
+            };
+
+            localStorage.setItem('orcamentoChurrascoTotal', totalChurrasco);
+            alert('Orçamento salvo com sucesso!');
+        }
+
+        // Calcular total ao carregar a página
+        calcularTotal();
+    </script>
+</body>
+</html>

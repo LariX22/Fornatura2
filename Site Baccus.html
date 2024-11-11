@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatura 2024 - O Grande Evento</title>
+    <link rel="stylesheet" href="Interacão,js">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Fotos/Avatares.jpeg') no-repeat center center fixed;
+            background-size:auto;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            position: relative;
+            padding: 100px 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 4em;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.5em;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        a Orç{
+            color: white;
+        }
+
+        /* Conteúdo principal */
+        .content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            font-size: 1.1em;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        input {
+            width: 250px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        button {
+            width: 250px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilos de Seções */
+        section {
+            padding: 50px 20px;
+            margin: 40px 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .event-details {
+            text-align: left;
+            font-size: 1.2em;
+        }
+
+        .gallery img {
+            width: 75%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            font-size: 1.5em;
+            margin: 0 10px;
+            color: #fff;
+        }
+
+        /* Cardápio e Bebidas */
+        .menu {
+            text-align: left;
+            font-size: 1.2em;
+        }
+
+        .menu h3 {
+            font-size: 2em;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menu ul li {
+            margin: 10px 0;
+        }
+
+        .footer {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            color: #fff;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        /* Estilos da contagem regressiva */
+        .countdown {
+            font-size: 2em;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 30px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .countdown span {
+            font-size: 3em;
+            font-weight: 600;
+            color: #ffcc00;
+            margin: 0 10px;
+        }
+
+        /* Animação de Fade-In */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            .countdown {
+                font-size: 1.5em;
+            }
+
+            input, button {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header do site -->
+    <header>
+        <h1>
+            Bakus Eventos 
+            <br>Formatura 2024 - O Grande Evento</h1>
+        <p>Contagem regressiva para o momento mais esperado!</p>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <div class="input-container">
+            <label for="target-date">Escolha a data e hora para a formatura:</label><br>
+            <input type="datetime-local" id="target-date" name="target-date">
+        </div>
+        <button onclick="startCountdown()">Iniciar Contagem Regressiva</button>
+        
+        <!-- Div para exibir a contagem regressiva -->
+        <div id="countdown" class="countdown"></div>
+    </div>
+
+    <!-- Detalhes do Evento -->
+    <section>
+        <h2>Detalhes do Evento</h2>
+        <div class="event-details">
+            <p><strong>Data:</strong> 15 de Dezembro de 2024</p>
+            <p><strong>Horário:</strong> 22:00h</p>
+            <p><strong>Local:</strong> Centro de Convenções, Rua das Flores, 123, São Paulo</p>
+            <p><strong>Descrição:</strong> Uma noite inesquecível de celebração, com música, dança, e a cerimônia de entrega dos diplomas aos graduandos da turma de 2024.</p>
+        </div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section>
+        <h2>Galeria de Fotos</h2>
+        <div class="gallery">
+            <img src="Fotos/Churrasco.jpeg" alt="Foto do evento 1">
+            <img src="Fotos/Coff.jpeg" alt="Foto do evento 2">
+            <img src="Fotos/Jantar.jpeg" alt="Foto do evento 3">
+            <img src="Fotos/Tradicional.jpeg" alt="Foto do evento 4">
+        </div>
+    </section>
+
+    <!-- Redes Sociais -->
+    <section>
+        <h2>Siga-nos nas Redes Sociais</h2>
+        <div class="social-links">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </section>
+
+    <!-- Perguntas Frequentes -->
+    <section>
+        <h2>Perguntas Frequentes</h2>
+        <ul class="event-details">
+            <li><strong>Posso levar acompanhantes?</strong> Sim, cada formando pode trazer até 2 acompanhantes.</li>
+            <li><strong>Onde posso comprar ingressos?</strong> Os ingressos estarão disponíveis no site oficial a partir de Novembro de 2024.</li>
+            <li><strong>Qual é o traje recomendado?</strong> Traje formal (terno para homens e vestido de gala para mulheres).</li>
+        </ul>
+    </section>
+
+    <!-- Cardápio e Bebidas para Churrasco -->
+    <section>
+        <h2>Cardápio e Bebidas para Churrasco</h2>
+        <div class="menu">
+            <h3>Carnes Vermelhas e Brancas</h3>
+            <ul>
+                <li>Picanha</li>
+                <li>Picanha Suína</li>
+                <li>Fraldinha</li>
+                <li>Alcatra</li>
+                <li>Lombo Suíno</li>
+                <li>Contra Filé</li>
+                <li>Medalhão de Porco</li>
+                <li>Linguiça de Porco</li>
+                <li>Linguiça de Frango</li>
+                <li>Queijo Coalho</li>
+                <li>Pão de Alho com Tomate e Ervas</li>
+                <li>Maminha</li>
+                <li>Pernil Suíno ao Molho</li>
+                <li>Costela de Boi</li>
+                <li>Tulipa</li>
+                <li>Coração de Galinha</li>
+                <li>Linguiça de Frango com Ervas Finas</li>
+                <li>Linguiça de Porco Defumada</li>
+                <li>Medalhão de Frango</li>
+                <li>Medalhão de Queijo</li>
+                <li>Pão de Alho com Bacon</li>
+            </ul>
+
+            <h3>Acompanhamentos para Churrasco</h3>
+            <ul>
+                <li>Chimichurri</li>
+                <li>Salada Tropical com Nozes e Uvas-Passas</li>
+                <li>Vinagrete</li>
+            </ul>
+
+            <h3>Bebidas Alcoólicas</h3>
+            <ul>
+                <li>Cervejas - Brahma, Brahma Chopp, Brahma Extra, Brahma Malzbier, Brahma Zero, Brahma Duplo Malte, Stella, Heineken, Spaten, Corona</li>
+                <li>Cachaças - Cachaça Branca, Cachaça Amarela, Cachaça Envelhecida, Cachaça Armazenada, Cachaça Blu Ice</li>
+                <li>Drinks Alcoólicos - Martini, Rossini, Caipirinha, Negroni, Bloody Mary</li>
+            </ul>
+
+            <h3>Refrigerantes</h3>
+            <ul>
+                <li>Guaraná Antárctica</li>
+                <li>Coca-Cola</li>
+                <li>Fanta Laranja</li>
+                <li>Sprite</li>
+                <li>Pepsi</li>
+            </ul>
+
+            <h3>Sucos de Caixinha</h3>
+            <ul>
+                <li>Suco de Uva sem Adição de Açúcar</li>
+                <li>Suco de Laranja</li>
+                <li>Suco de Maçã</li>
+                <li>Suco de Goiaba 100% sem Açúcar</li>
+                <li>Suco de Caju</li>
+            </ul>
+
+            <h3>Drinks sem Álcool</h3>
+            <ul>
+                <li>Água Tônica Saint Pierre Pink</li>
+                <li>Gin sem Álcool San Marco</li>
+                <li>Cerveja sem Álcool Atleta Bora Bora Pilsen</li>
+                <li>Água Saborizada de Lichia Zero Açúcar</li>
+                <li>Pink Lemonade</li>
+            </ul>
+        </div>
+    </section>
+   <h3>Faça seu Orçamento</h3>  
+   <button class="btn-toggle" onclick="window.location.href='Orçamentogeral.html'"> Orçamento </button>
+    <section id="localizacao" class="section localizacao">
+        <h2>Localização</h2>
+        <p>O evento será realizado no Centro de Convenções, Avenida Principal, 123, Lisboa.</p>
+        <div id="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.4820994099854!2d-9.15040358469254!3d38.72455897959432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19347cd582c9df%3A0xd293362a065e762d!2sCentro%20de%20Congressos%20de%20Lisboa!5e0!3m2!1spt-PT!2spt!4v1634473291282!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <section id="inscricao" class="section inscricao">
+        <h2>Inscreva-se para o Evento</h2>
+        <form id="form-inscricao">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="convidados">Número de Convidados:</label>
+            <input type="number" id="convidados" name="convidados" required>
+
+            <button type="submit" class="btn btn-primary">Enviar Inscrição</button>
+        </form>
+        <p id="mensagem"></p>
+    </section>
+
+    <!-- Rodapé -->
+    <div class="footer">
+        <p>&copy; 2024 Evento de Formatura - Todos os direitos reservados.</p>
+    </div>
+    <script>
+        function startCountdown() {
+            const countdownElement = document.getElementById("countdown");
+            const targetDate = new Date(document.getElementById("target-date").value);
+
+            if (isNaN(targetDate)) {
+                countdownElement.innerHTML = "Por favor, selecione uma data e hora válida.";
+                return;
+            }
+
+            const interval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance <= 0) {
+                    clearInterval(interval);
+                    countdownElement.innerHTML = "O grande dia chegou!";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

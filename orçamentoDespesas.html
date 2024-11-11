@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento de Despesas</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Fotos/Avatares.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+
+        table {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #555;
+        }
+
+        th {
+            background-color: #004080;
+            color: #fff;
+        }
+
+        .summary {
+            background-color: #2d2d2d;
+            font-weight: bold;
+        }
+
+        .total {
+            font-size: 1.5em;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .btn-toggle {
+            font-size: 1.2em;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .btn-toggle:hover {
+            background-color: #45a049;
+        }
+
+        .table-container {
+            display: none;
+        }
+
+        .btn {
+            font-size: 1.2em;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Despesas Fixas -->
+    <h2>Despesas Fixas</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Descrição</th>
+            <th>Quantidade</th>
+            <th>Custo Unitário (R$)</th>
+            <th>Total (R$)</th>
+        </tr>
+        <tr>
+            <td>Locação do Espaço</td>
+            <td>Aluguel do local</td>
+            <td>1</td>
+            <td>10000,00</td>
+            <td>10000,00</td>
+        </tr>
+        <tr>
+            <td>Decoração</td>
+            <td>Temática de formatura</td>
+            <td>1</td>
+            <td>8000,00</td>
+            <td>8000,00</td>
+        </tr>
+        <tr>
+            <td>Som e Iluminação</td>
+            <td>Equipamentos e serviços</td>
+            <td>1</td>
+            <td>5000,00</td>
+            <td>5000,00</td>
+        </tr>
+        <tr>
+            <td>Fotografia e Filmagem</td>
+            <td>Cobertura completa do evento</td>
+            <td>1</td>
+            <td>3500,00</td>
+            <td>3500,00</td>
+        </tr>
+        <tr>
+            <td>Segurança</td>
+            <td>Equipe de segurança</td>
+            <td>1</td>
+            <td>2000,00</td>
+            <td>2000,00</td>
+        </tr>
+        <tr class="summary">
+            <td colspan="4">Subtotal Despesas Fixas</td>
+            <td id="despesasFixasTotal">28500,00</td>
+        </tr>
+    </table>
+
+    <!-- Despesas Variáveis por Pessoa -->
+    <h2>Despesas Variáveis (por Pessoa)</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Descrição</th>
+            <th>Quantidade</th>
+            <th>Custo Unitário (R$)</th>
+            <th>Total (R$)</th>
+        </tr>
+        <tr>
+            <td>Buffet</td>
+            <td>Alimentação por pessoa</td>
+            <td>1400</td>
+            <td>50,00</td>
+            <td>70000,00</td>
+        </tr>
+        <tr>
+            <td>Bebidas</td>
+            <td>Bebidas variadas</td>
+            <td>1400</td>
+            <td>20,00</td>
+            <td>28000,00</td>
+        </tr>
+        <tr>
+            <td>Lembrancinhas</td>
+            <td>Souvenirs para convidados</td>
+            <td>109,79</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr class="summary">
+            <td colspan="4">Subtotal Despesas Variáveis (por Pessoa)</td>
+            <td id="despesasVariaveisTotal">98000,00</td>
+        </tr>
+    </table>
+
+    <h2>Total das Despesas</h2>
+    <div id="totalDespesas" class="total">R$ 126500,00</div>
+
+    <!-- Botões de Salvar e Voltar -->
+    <button class="btn" onclick="salvarOrcamento()">Salvar Orçamento</button>
+    <button class="btn" onclick="window.location.href='Orçamentogeral.html'">Voltar para a Página de Orçamento</button>
+
+    <script>
+        // Calculando o total de despesas e salvando no localStorage
+        function calcularTotalDespesas() {
+            const despesasFixas = parseFloat(document.getElementById('despesasFixasTotal').innerText.replace(',', '.')) || 0;
+            const despesasVariaveis = parseFloat(document.getElementById('despesasVariaveisTotal').innerText.replace(',', '.')) || 0;
+
+            // Calculando o total geral
+            const totalDespesas = despesasFixas + despesasVariaveis;
+            document.getElementById('totalDespesas').innerText = `R$ ${totalDespesas.toFixed(2).replace('.', ',')}`;
+
+            // Salvando o total das despesas no localStorage
+            localStorage.setItem('despesasTotal', totalDespesas);
+        }
+
+        // Função para salvar o orçamento
+        function salvarOrcamento() {
+            // Recupera o total calculado
+            const total = document.getElementById('totalDespesas').innerText.replace('R$', '').replace(',', '.');
+
+            // Salva no localStorage
+            localStorage.setItem('orcamentoTotal', total);
+
+            // Exibe uma mensagem de confirmação
+            alert('Orçamento salvo com sucesso!');
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = calcularTotalDespesas;
+    </script>
+</body>
+</html>

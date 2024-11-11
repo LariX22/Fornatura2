@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento Completo de Evento</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Fotos/Avatares.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+
+        .btn {
+            font-size: 1.2em;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .total {
+            font-size: 1.5em;
+            color: #ffcc00;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Orçamento Completo de Evento</h1>
+    
+    <h2>Selecione o orçamento que deseja visualizar:</h2>
+
+    <button class="btn" onclick="window.location.href='bebidas.html'">Orçamento de Bebidas</button>
+    <button class="btn" onclick="window.location.href='sobremesas.html'">Orçamento de Sobremesas</button>
+    <button class="btn" onclick="window.location.href='frios.html'">Orçamento de Frios</button>
+    <button class="btn" onclick="window.location.href='orcamentochurrasco.html'">Orçamento de Churrasco</button>
+    <button class="btn" onclick="window.location.href='orçamentoDespesas.html'">Orçamento de Despesas</button>
+
+    <h2>Total do Orçamento</h2>
+    <div id="total" class="total">R$ 0,00</div>
+    <button class="btn" onclick="window.location.href='Site Baccus.html'">Voltar para a Página Inicial</button>
+
+    <script>
+        // Função para carregar o orçamento total, pegando os valores de localStorage
+        function calculateTotal() {
+            const bebidasTotal = parseFloat(localStorage.getItem('bebidasTotal')) || 0;
+            const sobremesasTotal = parseFloat(localStorage.getItem('sobremesasTotal')) || 0;
+            const friosTotal = parseFloat(localStorage.getItem('friosTotal')) || 0;
+            const orcamentoChurrascoTotal = parseFloat(localStorage.getItem('orcamentoChurrascoTotal')) || 0;
+            const despesasTotal = parseFloat(localStorage.getItem('despesasTotal')) || 0; // Adiciona o total de despesas
+
+            // Soma dos valores
+            const total = bebidasTotal + sobremesasTotal + friosTotal + orcamentoChurrascoTotal + despesasTotal;
+            
+            // Atualiza o texto na página com o total calculado
+            document.getElementById('total').innerText = `R$ ${total.toFixed(2)}`;
+        }
+
+        // Chama a função calculateTotal assim que a página for carregada
+        window.onload = calculateTotal;
+    </script>
+</body>
+</html>

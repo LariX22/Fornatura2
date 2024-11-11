@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento de Sobremesas</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Fotos/Avatares.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+
+        table {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #555;
+        }
+
+        th {
+            background-color: #004080;
+            color: #fff;
+        }
+
+        .summary {
+            background-color: #2d2d2d;
+            font-weight: bold;
+        }
+
+        .total {
+            font-size: 1.5em;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .btn-toggle {
+            font-size: 1.2em;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .btn-toggle:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Orçamento de Sobremesas</h1>
+    
+    <h2>Detalhamento do Orçamento de Sobremesas</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Quantidade</th>
+            <th>Custo Unitário (R$)</th>
+            <th>Total (R$)</th>
+        </tr>
+        <tr>
+            <td>Torta mousse de limão</td>
+            <td>2 kg</td>
+            <td>60,00</td>
+            <td id="tortaMousseLimao">120,00</td>
+        </tr>
+        <tr>
+            <td>Mousse de chocolate</td>
+            <td>2 kg</td>
+            <td>60,00</td>
+            <td id="mousseChocolate">120,00</td>
+        </tr>
+        <tr>
+            <td>Pudim de leite</td>
+            <td>2 kg</td>
+            <td>50,00</td>
+            <td id="pudimLeite">100,00</td>
+        </tr>
+        <tr class="summary">
+            <td colspan="3">Subtotal Sobremesas</td>
+            <td id="subtotalSobremesas">340,00</td>
+        </tr>
+    </table>
+
+    <div class="total">
+        <h2>Total Sobremesas: R$ <span id="totalSobremesas">340,00</span></h2>
+    </div>
+
+    <button class="btn-toggle" onclick="salvarOrcamento()">Salvar Orçamento</button>
+    <button class="btn-toggle" onclick="window.location.href='Orçamentogeral.html'">Voltar para a Página de Orçamento</button>
+
+    <script>
+        function salvarOrcamento() {
+            const totalSobremesas = document.getElementById('totalSobremesas').innerText;
+
+            const orcamento = {
+                totalSobremesas: totalSobremesas
+            };
+
+            localStorage.setItem('sobremesasTotal', totalSobremesas);
+            alert('Orçamento de sobremesas salvo com sucesso!');
+        }
+    </script>
+</body>
+</html>
