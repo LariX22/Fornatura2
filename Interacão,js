@@ -1,0 +1,37 @@
+ document.getElementById('orcamentoBtn').addEventListener('click', function() {
+    const resultados = document.getElementById('orcamentoResultados');
+    resultados.classList.toggle('hidden');
+});
+
+var countdownInterval;
+
+function startCountdown() {
+    var targetDate = new Date(document.getElementById("target-date").value).getTime();
+
+    if (countdownInterval) {
+        clearInterval(countdownInterval);
+    }
+
+    countdownInterval = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = targetDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = 
+            "<span>" + days + "d</span>" + 
+            "<span>" + hours + "h</span>" + 
+            "<span>" + minutes + "m</span>" + 
+            "<span>" + seconds + "s</span>";
+
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById("countdown").innerHTML = "O grande dia chegou!";
+        }
+    }, 1000);
+   
+
+}
