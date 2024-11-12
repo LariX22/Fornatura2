@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orçamento de Sobremesas</title>
-<link rel="shortcut icon" href="Fotos/Mascote.jpeg" type="image/x-icon">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -93,20 +92,21 @@
         </tr>
         <tr>
             <td>Torta mousse de limão</td>
-            <td>2 kg</td>
-            <td>60,00</td>
+            <!-- IDs adicionados para acessar os valores com JavaScript -->
+            <td><span id="quantidadeTortaMousseLimao">2</span> kg</td>
+            <td><span id="precoTortaMousseLimao">60,00</span></td>
             <td id="tortaMousseLimao">120,00</td>
         </tr>
         <tr>
             <td>Mousse de chocolate</td>
-            <td>2 kg</td>
-            <td>60,00</td>
+            <td><span id="quantidadeMousseChocolate">2</span> kg</td>
+            <td><span id="precoMousseChocolate">60,00</span></td>
             <td id="mousseChocolate">120,00</td>
         </tr>
         <tr>
             <td>Pudim de leite</td>
-            <td>2 kg</td>
-            <td>50,00</td>
+            <td><span id="quantidadePudimLeite">2</span> kg</td>
+            <td><span id="precoPudimLeite">50,00</span></td>
             <td id="pudimLeite">100,00</td>
         </tr>
         <tr class="summary">
@@ -123,16 +123,44 @@
     <button class="btn-toggle" onclick="window.location.href='Orçamentogeral.html'">Voltar para a Página de Orçamento</button>
 
     <script>
+        // Função para calcular o total de cada item e o subtotal
+        function calcularTotais() {
+            // Pegando os valores das quantidades e preços unitários
+            const quantidadeTortaMousseLimao = parseFloat(document.getElementById('quantidadeTortaMousseLimao').textContent);
+            const precoTortaMousseLimao = parseFloat(document.getElementById('precoTortaMousseLimao').textContent.replace(',', '.'));
+
+            const quantidadeMousseChocolate = parseFloat(document.getElementById('quantidadeMousseChocolate').textContent);
+            const precoMousseChocolate = parseFloat(document.getElementById('precoMousseChocolate').textContent.replace(',', '.'));
+
+            const quantidadePudimLeite = parseFloat(document.getElementById('quantidadePudimLeite').textContent);
+            const precoPudimLeite = parseFloat(document.getElementById('precoPudimLeite').textContent.replace(',', '.'));
+
+            // Calculando o total de cada item
+            const totalTortaMousseLimao = quantidadeTortaMousseLimao * precoTortaMousseLimao;
+            const totalMousseChocolate = quantidadeMousseChocolate * precoMousseChocolate;
+            const totalPudimLeite = quantidadePudimLeite * precoPudimLeite;
+
+            // Atualizando os totais na página
+            document.getElementById('tortaMousseLimao').textContent = totalTortaMousseLimao.toFixed(2).replace('.', ',');
+            document.getElementById('mousseChocolate').textContent = totalMousseChocolate.toFixed(2).replace('.', ',');
+            document.getElementById('pudimLeite').textContent = totalPudimLeite.toFixed(2).replace('.', ',');
+
+            // Calculando o subtotal e o total geral
+            const subtotal = totalTortaMousseLimao + totalMousseChocolate + totalPudimLeite;
+            document.getElementById('subtotalSobremesas').textContent = subtotal.toFixed(2).replace('.', ',');
+            document.getElementById('totalSobremesas').textContent = subtotal.toFixed(2).replace('.', ',');
+        }
+
+        // Função para salvar o orçamento no localStorage
         function salvarOrcamento() {
+            calcularTotais(); // Chama a função para calcular antes de salvar
             const totalSobremesas = document.getElementById('totalSobremesas').innerText;
-
-            const orcamento = {
-                totalSobremesas: totalSobremesas
-            };
-
             localStorage.setItem('sobremesasTotal', totalSobremesas);
             alert('Orçamento de sobremesas salvo com sucesso!');
         }
+
+        // Calcular automaticamente quando a página for carregada
+        window.onload = calcularTotais;
     </script>
 </body>
 </html>
