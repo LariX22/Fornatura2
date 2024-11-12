@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="Fotos/Mascote.jpeg" type="image/x-icon">
     <title>Orçamento Completo de Evento</title>
     <style>
         body {
@@ -91,52 +90,89 @@
     <button class="btn-toggle" onclick="toggleSection('churrasco1Container')">Churrasco Opção 1</button>
     <div id="churrasco1Container" class="table-container">
         <h2>Churrasco Opção 1</h2>
-        <table>
-            <tr>
-                <th>Item</th>
-                <th>Quantidade</th>
-                <th>Custo Unitário (R$)</th>
-                <th>Total (R$)</th>
-            </tr>
-            <tr>
-                <td>Picanha</td>
-                <td>13 kg</td>
-                <td>89,90</td>
-                <td id="picanha1">1168,70</td>
-            </tr>
-            <tr>
-                <td>Picanha Suína</td>
-                <td>13 kg</td>
-                <td>38,90</td>
-                <td id="picanhaSuina1">505,70</td>
-            </tr>
-            <tr>
-                <td>Fraldinha</td>
-                <td>13 kg</td>
-                <td>32,90</td>
-                <td id="fraldinha1">427,70</td>
-            </tr>
-            <tr>
-                <td>Alcatra</td>
-                <td>13 kg</td>
-                <td>35,90</td>
-                <td id="alcatra1">466,70</td>
-            </tr>
-            <tr>
-                <td>Linguiça Toscana</td>
-                <td>13 kg</td>
-                <td>22,90</td>
-                <td id="linguica1">298,70</td>
-            </tr>
-            <tr>
-                <td>Asa de Frango</td>
-                <td>13 kg</td>
-                <td>17,90</td>
-                <td id="asaFrango1">232,70</td>
-            </tr>
+            <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Preço Unitário (R$)</th>
+                    <th>Quantidade</th>
+                    <th>Custo Total (R$)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Picanha</td>
+                    <td>R$ 89,90/kg</td>
+                    <td>13 kg</td>
+                    <td>R$ 1168,70</td>
+                </tr>
+                <tr>
+                    <td>Picanha Suína</td>
+                    <td>R$ 38,90/kg</td>
+                    <td>13 kg</td>
+                    <td>R$ 505,70</td>
+                </tr>
+                <tr>
+                    <td>Fraldinha</td>
+                    <td>R$ 32,90/kg</td>
+                    <td>13 kg</td>
+                    <td>R$ 427,70</td>
+                </tr>
+                <tr>
+                    <td>Alcatra</td>
+                    <td>R$ 35,90/kg</td>
+                    <td>13 kg</td>
+                    <td>R$ 466,70</td>
+                </tr>
+                <tr>
+                    <td>Lombo Suíno</td>
+                    <td>R$ 28,90/kg</td>
+                    <td>13 kg</td>
+                    <td>R$ 375,70</td>
+                </tr>
+                <tr>
+                    <td>Contra Filé</td>
+                    <td>R$ 41,90/kg</td>
+                    <td>13 kg</td>
+                    <td>R$ 544,70</td>
+                </tr>
+                <tr>
+                    <td>Medalhão Porco</td>
+                    <td>R$ 29,90/kg</td>
+                    <td>13 kg</td>
+                    <td>R$ 388,70</td>
+                </tr>
+                <tr>
+                    <td>Linguiça de Porco</td>
+                    <td>R$ 29,90/kg</td>
+                    <td>13 kg</td>
+                    <td>R$ 388,70</td>
+                </tr>
+                <tr>
+                    <td>Linguiça de Frango</td>
+                    <td>R$ 29,90/kg</td>
+                    <td>13 kg</td>
+                    <td>R$ 388,70</td>
+                </tr>
+                <tr>
+                    <td>Queijo Coalho</td>
+                    <td>R$ 23,90/kg</td>
+                    <td>13 kg</td>
+                    <td>R$ 310,70</td>
+                </tr>
+                <tr>
+                    <td>Pão de Alho de Tomate e Ervas</td>
+                    <td>R$ 8,90/un</td>
+                    <td>30 unidades</td>
+                    <td>R$ 267,00</td>
+                </tr>
+                <tr class="total">
+                    <td colspan="3">Total</td>
+                    <td>R$ 5621,70</td>
+                </tr>
             <tr class="summary">
                 <td colspan="3">Subtotal Churrasco Opção 1</td>
-                <td id="subtotalChurrasco1">2569,80</td>
+                <td id="subtotalChurrasco1">5621,70</td>
             </tr>
         </table>
     </div>
@@ -144,53 +180,91 @@
     <!-- Churrasco Opção 2 -->
     <button class="btn-toggle" onclick="toggleSection('churrasco2Container')">Churrasco Opção 2</button>
     <div id="churrasco2Container" class="table-container">
-        <h2>Churrasco Opção 2</h2>
-        <table>
+        <h1>Churrasco Opção 2 - Carnes Vermelhas e Brancas (Para 30 pessoas)</h1>
+
+    <table>
+        <thead>
             <tr>
                 <th>Item</th>
+                <th>Preço Unitário (R$)</th>
                 <th>Quantidade</th>
-                <th>Custo Unitário (R$)</th>
-                <th>Total (R$)</th>
+                <th>Custo Total (R$)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Maminha</td>
+                <td>R$ 42,90/kg</td>
+                <td>13 kg</td>
+                <td>R$ 557,70</td>
+            </tr>
+            <tr>
+                <td>Pernil Suíno ao Molho</td>
+                <td>R$ 35,90/kg</td>
+                <td>13 kg</td>
+                <td>R$ 466,70</td>
             </tr>
             <tr>
                 <td>Picanha</td>
+                <td>R$ 89,90/kg</td>
                 <td>13 kg</td>
-                <td>89,90</td>
-                <td id="picanha2">1168,70</td>
+                <td>R$ 1168,70</td>
             </tr>
             <tr>
-                <td>Picanha Suína</td>
+                <td>Costela Boi</td>
+                <td>R$ 28,90/kg</td>
                 <td>13 kg</td>
-                <td>38,90</td>
-                <td id="picanhaSuina2">505,70</td>
+                <td>R$ 375,70</td>
             </tr>
             <tr>
-                <td>Fraldinha</td>
+                <td>Tulipa</td>
+                <td>R$ 24,90/kg</td>
                 <td>13 kg</td>
-                <td>32,90</td>
-                <td id="fraldinha2">427,70</td>
+                <td>R$ 323,70</td>
             </tr>
             <tr>
-                <td>Alcatra</td>
+                <td>Coração de Galinha</td>
+                <td>R$ 31,90/kg</td>
                 <td>13 kg</td>
-                <td>35,90</td>
-                <td id="alcatra2">466,70</td>
+                <td>R$ 414,70</td>
             </tr>
             <tr>
-                <td>Linguiça Toscana</td>
+                <td>Linguiça de Frango com Ervas Finas</td>
+                <td>R$ 29,90/kg</td>
                 <td>13 kg</td>
-                <td>22,90</td>
-                <td id="linguica2">298,70</td>
+                <td>R$ 388,70</td>
             </tr>
             <tr>
-                <td>Asa de Frango</td>
+                <td>Linguiça de Porco Defumada</td>
+                <td>R$ 29,90/kg</td>
                 <td>13 kg</td>
-                <td>17,90</td>
-                <td id="asaFrango2">232,70</td>
+                <td>R$ 388,70</td>
+            </tr>
+            <tr>
+                <td>Medalhão de Frango</td>
+                <td>R$ 25,90/kg</td>
+                <td>13 kg</td>
+                <td>R$ 336,70</td>
+            </tr>
+            <tr>
+                <td>Medalhão de Queijo</td>
+                <td>R$ 31,90/kg</td>
+                <td>13 kg</td>
+                <td>R$ 414,70</td>
+            </tr>
+            <tr>
+                <td>Pão de Alho com Bacon</td>
+                <td>R$ 8,90/un</td>
+                <td>30 unidades</td>
+                <td>R$ 267,00</td>
+            </tr>
+            <tr class="total">
+                <td colspan="3">Total</td>
+                <td>R$ 5103,00</td>
             </tr>
             <tr class="summary">
                 <td colspan="3">Subtotal Churrasco Opção 2</td>
-                <td id="subtotalChurrasco2">2569,80</td>
+                <td id="subtotalChurrasco2">5103,00</td>
             </tr>
         </table>
     </div>
@@ -230,16 +304,16 @@
             </tr>
             <tr class="summary">
                 <td colspan="4">Subtotal Acompanhamentos</td>
-                <td id="subtotalAcompanhamentos">2651,90</td>
+                <td id="subtotalAcompanhamentos">915,00</td>
             </tr>
         </table>
     </div>
 
     <div class="total">
         <h2>Total Geral do Orçamento:</h2>
-        <p><strong>Total do Churrasco: R$ <span id="totalChurrasco">5220,60</span></strong></p>
-        <p><strong>Total dos Acompanhamentos: R$ <span id="totalAcompanhamentos">274.50</span></strong></p>
-        <p><strong>Total Geral: R$ <span id="totalGeral">5495,10</span></strong></p>
+        <p><strong>Total do Churrasco: R$ <span id="totalChurrasco">10724,70</span></strong></p>
+        <p><strong>Total dos Acompanhamentos: R$ <span id="totalAcompanhamentos">915,00</span></strong></p>
+        <p><strong>Total Geral: R$ <span id="totalGeral">11639,70</span></strong></p>
     </div>
 
     <button class="btn-toggle" onclick="salvarOrcamento()">Salvar Orçamento</button>
