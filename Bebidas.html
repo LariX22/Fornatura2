@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="Fotos/Mascote.jpeg" type="image/x-icon">
     <title>Orçamento de Bebidas</title>
     <style>
         body {
@@ -77,13 +76,29 @@
         .btn-toggle:hover {
             background-color: #45a049;
         }
+
+        .btn-save, .btn-load {
+            font-size: 1.2em;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .btn-save:hover, .btn-load:hover {
+            background-color: #005f73;
+        }
     </style>
 </head>
 <body>
 
     <h1>Orçamento de Bebidas</h1>
     
-    <h2>Detalhamento do Orçamento de Bebidas</h2>
+    <h2>Bebidas não Alcoólicas</h2>
     <table>
         <tr>
             <th>Item</th>
@@ -187,45 +202,196 @@
         </tr>
     </table>
 
+    <h1>Bebidas Alcoólicas - Orçamento</h1>
+        <h2>Cervejas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Bebida</th>
+                    <th>Quantidade</th>
+                    <th>Custo Unitário (R$)</th>
+                    <th>Custo Total (R$)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Brahma (1L)</td>
+                    <td>4 caixas</td>
+                    <td>R$ 9,00</td>
+                    <td id="brahma">R$ 432,00</td>
+                </tr>
+                <tr>
+                    <td>Stella (1L)</td>
+                    <td>4 caixas</td>
+                    <td>R$ 12,00</td>
+                    <td id="stella">R$ 576,00</td>
+                </tr>
+                <tr>
+                    <td>Heineken (1L)</td>
+                    <td>4 caixas</td>
+                    <td>R$ 15,00</td>
+                    <td id="heineken">R$ 720,00</td>
+                </tr>
+                <tr>
+                    <td>Spaten (1L)</td>
+                    <td>4 caixas</td>
+                    <td>R$ 13,00</td>
+                    <td id="spaten">R$ 624,00</td>
+                </tr>
+                <tr>
+                    <td>Corona (1L)</td>
+                    <td>4 caixas</td>
+                    <td>R$ 15,90</td>
+                    <td id="corona">R$ 763,20</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Cachaças</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Bebida</th>
+                    <th>Quantidade</th>
+                    <th>Custo Unitário (R$)</th>
+                    <th>Custo Total (R$)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cachaça Branca (700ml)</td>
+                    <td>8 garrafas</td>
+                    <td>R$ 36,99</td>
+                    <td id="cachacaBranca">R$ 295,92</td>
+                </tr>
+                <tr>
+                    <td>Cachaça Amarela (700ml)</td>
+                    <td>8 garrafas</td>
+                    <td>R$ 35,90</td>
+                    <td id="cachacaAmarela">R$ 287,20</td>
+                </tr>
+                <tr>
+                    <td>Cachaça Envelhecida (700ml)</td>
+                    <td>8 garrafas</td>
+                    <td>R$ 49,99</td>
+                    <td id="cachacaEnvelhecida">R$ 399,92</td>
+                </tr>
+                <tr>
+                    <td>Cachaça Armazenada (1L)</td>
+                    <td>5 garrafas</td>
+                    <td>R$ 43,99</td>
+                    <td id="cachacaArmazenada">R$ 219,95</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Drinks Alcoólicos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Drink</th>
+                    <th>Quantidade</th>
+                    <th>Custo Unitário (R$)</th>
+                    <th>Custo Total (R$)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Martini (300ml)</td>
+                    <td>50 taças</td>
+                    <td>R$ 12,00</td>
+                    <td id="martini">R$ 600,00</td>
+                </tr>
+                <tr>
+                    <td>Rossini (500ml)</td>
+                    <td>50 taças</td>
+                    <td>R$ 17,99</td>
+                    <td id="rossini">R$ 899,50</td>
+                </tr>
+                <tr>
+                    <td>Caipirinha (500ml)</td>
+                    <td>50 taças</td>
+                    <td>R$ 16,99</td>
+                    <td id="caipirinha">R$ 849,50</td>
+                </tr>
+                <tr>
+                    <td>Negroni (300ml)</td>
+                    <td>50 taças</td>
+                    <td>R$ 22,90</td>
+                    <td id="negroni">R$ 1.145,00</td>
+                </tr>
+                <tr>
+                    <td>Bloody Mary (300ml)</td>
+                    <td>50 taças</td>
+                    <td>R$ 18,90</td>
+                    <td id="bloodyMary">R$ 945,00</td>
+                </tr>
+            </tbody>
+        </table>
+
     <div class="total">
-        <h2>Total Bebidas: R$ <span id="totalBebidas">417,98</span></h2>
+        <h2>Total Bebidas: R$ <span id="totalBebidas">R$ 9.175,18</span></h2>
     </div>
 
-    <button class="btn-toggle" onclick="salvarOrcamento()">Salvar Orçamento de Bebidas</button>
+   <!-- Botões de Salvamento e Carregamento -->
+    <button class="btn-save" onclick="saveBudget()">Salvar Orçamento </button>
     <button class="btn-toggle" onclick="window.location.href='Orçamentogeral.html'">Voltar para a Página De Orçamento</button>
 
     <script>
-        function calcularTotal() {
-            const guarana = parseFloat(document.getElementById('guarana').innerText);
-            const coca = parseFloat(document.getElementById('coca').innerText);
-            const fanta = parseFloat(document.getElementById('fanta').innerText);
-            const sprite = parseFloat(document.getElementById('sprite').innerText);
-            const pepsi = parseFloat(document.getElementById('pepsi').innerText);
-            const sucoUva = parseFloat(document.getElementById('sucoUva').innerText);
-            const sucoLaranja = parseFloat(document.getElementById('sucoLaranja').innerText);
-            const sucoMaca = parseFloat(document.getElementById('sucoMaca').innerText);
-            const sucoGoiaba = parseFloat(document.getElementById('sucoGoiaba').innerText);
-            const sucoCaju = parseFloat(document.getElementById('sucoCaju').innerText);
-            const aguaTonica = parseFloat(document.getElementById('aguaTonica').innerText);
-            const gin = parseFloat(document.getElementById('gin').innerText);
-            const cerveja = parseFloat(document.getElementById('cerveja').innerText);
-            const aguaLichia = parseFloat(document.getElementById('aguaLichia').innerText);
-            const pinkLemonade = parseFloat(document.getElementById('pinkLemonade').innerText);
-            
-            const total = guarana + coca + fanta + sprite + pepsi + sucoUva + sucoLaranja + sucoMaca + sucoGoiaba + sucoCaju + aguaTonica + gin + cerveja + aguaLichia + pinkLemonade;
-            
-            document.getElementById('subtotal').innerText = total.toFixed(2);
-            document.getElementById('totalBebidas').innerText = total.toFixed(2);
-        }
+     function calcularTotal() {
+    // Bebidas não alcoólicas
+    let guarana = parseFloat(document.getElementById('guarana').textContent.replace(',', '.'));
+    let coca = parseFloat(document.getElementById('coca').textContent.replace(',', '.'));
+    let fanta = parseFloat(document.getElementById('fanta').textContent.replace(',', '.'));
+    let sprite = parseFloat(document.getElementById('sprite').textContent.replace(',', '.'));
+    let pepsi = parseFloat(document.getElementById('pepsi').textContent.replace(',', '.'));
+    let sucoUva = parseFloat(document.getElementById('sucoUva').textContent.replace(',', '.'));
+    let sucoLaranja = parseFloat(document.getElementById('sucoLaranja').textContent.replace(',', '.'));
+    let sucoMaca = parseFloat(document.getElementById('sucoMaca').textContent.replace(',', '.'));
+    let sucoGoiaba = parseFloat(document.getElementById('sucoGoiaba').textContent.replace(',', '.'));
+    let sucoCaju = parseFloat(document.getElementById('sucoCaju').textContent.replace(',', '.'));
+    let aguaTonica = parseFloat(document.getElementById('aguaTonica').textContent.replace(',', '.'));
+    let gin = parseFloat(document.getElementById('gin').textContent.replace(',', '.'));
+    let cerveja = parseFloat(document.getElementById('cerveja').textContent.replace(',', '.'));
+    let aguaLichia = parseFloat(document.getElementById('aguaLichia').textContent.replace(',', '.'));
+    let pinkLemonade = parseFloat(document.getElementById('pinkLemonade').textContent.replace(',', '.'));
 
-        function salvarOrcamento() {
-            const totalBebidas = document.getElementById('totalBebidas').innerText;
-            localStorage.setItem('bebidasTotal', totalBebidas);
-            alert('Orçamento de bebidas salvo com sucesso!');
-        }
+    // Bebidas alcoólicas
+    let brahma = parseFloat(document.getElementById('brahma').textContent.replace('R$ ', '').replace(',', '.'));
+    let stella = parseFloat(document.getElementById('stella').textContent.replace('R$ ', '').replace(',', '.'));
+    let heineken = parseFloat(document.getElementById('heineken').textContent.replace('R$ ', '').replace(',', '.'));
+    let spaten = parseFloat(document.getElementById('spaten').textContent.replace('R$ ', '').replace(',', '.'));
+    let corona = parseFloat(document.getElementById('corona').textContent.replace('R$ ', '').replace(',', '.'));
+    let cachacaBranca = parseFloat(document.getElementById('cachacaBranca').textContent.replace('R$ ', '').replace(',', '.'));
+    let cachacaAmarela = parseFloat(document.getElementById('cachacaAmarela').textContent.replace('R$ ', '').replace(',', '.'));
+    let cachacaEnvelhecida = parseFloat(document.getElementById('cachacaEnvelhecida').textContent.replace('R$ ', '').replace(',', '.'));
+    let cachacaArmazenada = parseFloat(document.getElementById('cachacaArmazenada').textContent.replace('R$ ', '').replace(',', '.'));
+    let martini = parseFloat(document.getElementById('martini').textContent.replace('R$ ', '').replace(',', '.'));
+    let rossini = parseFloat(document.getElementById('rossini').textContent.replace('R$ ', '').replace(',', '.'));
+    let caipirinha = parseFloat(document.getElementById('caipirinha').textContent.replace('R$ ', '').replace(',', '.'));
+    let negroni = parseFloat(document.getElementById('negroni').textContent.replace('R$ ', '').replace(',', '.'));
+    let bloodyMary = parseFloat(document.getElementById('bloodyMary').textContent.replace('R$ ', '').replace(',', '.'));
 
-        // Calcular total ao carregar a página
-        calcularTotal();
+    // Calcular total geral
+    let totalBebidas = guarana + coca + fanta + sprite + pepsi + sucoUva + sucoLaranja + sucoMaca + sucoGoiaba + sucoCaju + aguaTonica + gin + cerveja + aguaLichia + pinkLemonade
+        + brahma + stella + heineken + spaten + corona + cachacaBranca + cachacaAmarela + cachacaEnvelhecida + cachacaArmazenada
+        + martini + rossini + caipirinha + negroni + bloodyMary;
+
+        // Função para salvar o orçamento no localStorage
+// Função para salvar o orçamento no localStorage
+function saveBudget() {
+    let totalBebidas = calcularTotal(); // Calcula o total de bebidas
+
+    localStorage.setItem('totalBebidas', totalSobremesas); // Salva o valor calculado
+    alert('Orçamento de Bebidas salvo com sucesso!');
+}
+
+}
+    // Exibir total no HTML
+    document.getElementById('totalBebidas').textContent = `R$ ${totalBebidas.toFixed(2).replace('.', ',')}`;
+    
+    return totalBebidas;
     </script>
+    
 </body>
 </html>
