@@ -147,7 +147,7 @@
         <tr class="summary">
             <td colspan="4">Subtotal Despesas Fixas</td>
             <td id="despesasFixasTotal">28500,00</td>
-        </tr>
+        </tr>     
     </table>
 
     <!-- Orçamento de Garçons -->
@@ -186,7 +186,7 @@
         <tr class="summary">
             <td colspan="3">Total Garçons</td>
             <td>R$1.470,00</td>
-        </tr>
+        </tr>       
     </table>
 
     <!-- Despesas Variáveis por Pessoa -->
@@ -215,19 +215,20 @@
         </tr>
         <tr>
             <td>Lembrancinhas</td>
-            <td>Souvenirs para convidados</td>
+            <td>Souvenirs para Formandos</td>
+            <td>-</td>
+            <td>-</td>
             <td>109,79</td>
-            <td>-</td>
-            <td>-</td>
         </tr>
         <tr class="summary">
             <td colspan="4">Subtotal Despesas Variáveis (por Pessoa)</td>
-            <td id="despesasVariaveisTotal">98000,00</td>
+            <td id="despesasVariaveisTotal">100646,85</td>
         </tr>
+        
     </table>
 
     <h2>Total das Despesas</h2>
-    <div id="totalDespesas" class="total">R$ 126500,00</div>
+    <div id="totalDespesas" class="total">R$ 129116,85</div>
 
     <!-- Botões de Salvar e Voltar -->
     <button class="btn" onclick="salvarOrcamento()">Salvar Orçamento</button>
@@ -236,16 +237,16 @@
     <script>
         // Calculando o total de despesas e salvando no localStorage
         function calcularTotalDespesas() {
-            const despesasFixas = parseFloat(document.getElementById('despesasFixasTotal').innerText.replace(',', '.')) || 0;
-            const despesasVariaveis = parseFloat(document.getElementById('despesasVariaveisTotal').innerText.replace(',', '.')) || 0;
+    const despesasFixas = parseFloat(document.getElementById('despesasFixasTotal').innerText.replace(',', '.')) || 0;
+    const despesasVariaveis = parseFloat(document.getElementById('despesasVariaveisTotal').innerText.replace(',', '.')) || 0;
 
-            // Calculando o total geral
-            const totalDespesas = despesasFixas + despesasVariaveis;
-            document.getElementById('totalDespesas').innerText = `R$ ${totalDespesas.toFixed(2).replace('.', ',')}`;
+    // Calculando o total geral
+    const totalDespesas = despesasFixas + despesasVariaveis;
+    document.getElementById('totalDespesas').innerText = `R$ ${totalDespesas.toFixed(2).replace('.', ',')}`;
 
-            // Salvando o total das despesas no localStorage
-            localStorage.setItem('despesasTotal', totalDespesas);
-        }
+    // Salvando o total das despesas no localStorage
+    localStorage.setItem('despesasTotal', totalDespesas);
+}
 
         // Função para salvar o orçamento
         function salvarOrcamento() {
